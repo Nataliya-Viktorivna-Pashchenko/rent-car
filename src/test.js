@@ -1,0 +1,1 @@
+https://65e7949553d564627a8f0720.mockapi.io/:endpoint
