@@ -1,17 +1,24 @@
 import axios from 'axios';
 
+// export const getAdverts = async (page) => {
+  
+//   const { data } = await axios.get(
+//     `https://65e7949553d564627a8f0720.mockapi.io/advert`  );
+
+//   return data;
+// };
+
 export const getAdverts = async (page) => {
   
   const { data } = await axios.get(
-    `https://65e7949553d564627a8f0720.mockapi.io/advert?page=${page}&limit=4`  );
+    `https://65e7949553d564627a8f0720.mockapi.io/advert?page=${page}&limit=2`  );
 
   return data;
 };
 
-
-export const getAdvertById = async (id) => {
+export const getAdvertsAll = async () => {
   const { data } = await axios.get(
-    `https://65e7949553d564627a8f0720.mockapi.io/advert/${id}`
+    `https://65e7949553d564627a8f0720.mockapi.io/advert/`
   );
 
   return data;

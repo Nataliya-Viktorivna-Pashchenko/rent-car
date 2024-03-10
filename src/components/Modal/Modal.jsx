@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { StyledModal } from './Styled';
+import { StyledModal } from './Modal.styled';
 import { GrClose } from "react-icons/gr";
 
 // import { StyledModal } from './Styled';
@@ -58,18 +58,90 @@ const Modal = ({ modalData, closeModal }) => {
         <button onClick={closeModal} className="closeBtn">
         <GrClose />
         </button>
+
+        <img className='imgModal' src= {modalData.img} alt={modalData.make}  />
+           
         
-          <h3>address: {modalData.address}</h3>
-          <p>rentalCompany: {modalData.rentalCompany}</p>
-          <p>rentalPrice: {modalData.rentalPrice}</p>
-          {/* <button onClick={handleCall}>
+        <div className='itemStyleYear'>
+      <span >{modalData.make} </span>
+      <span className='modelStyle'>{modalData.model}, </span>
+          <span>{modalData.year}</span>
+          </div>
+        
+      
+      <div className='itemStyleDiscr'>
+          <span >{modalData.address} | </span>
+          <span >Id: {modalData.id} | </span>
+          <span >Year: {modalData.year} | </span>
+          <span >Type: {modalData.type}</span>
+        </div>
+        
+        <div className='itemStyleDiscr' >
+        <span >FuelConsumption: {modalData.fuelConsumption} | </span>
+        <span >EngineSize: {modalData.engineSize}</span>
+        </div>
+
+        <div className='discrStyle' >
+        <span >{modalData.description}</span>
+        </div>
+
+        <div className='titleDiscr'>Accessories and functionalities:</div>
+        
+        <div className='itemStyleDiscr'>
+          <span>{modalData.accessories[0]} | </span>
+          <span>{modalData.accessories[1]} | </span>
+          <span>{modalData.accessories[2]} </span>
+        </div>
+        <div className='itemStyle_Discr'>
+          <span>{modalData.functionalities[0]} | </span>
+          <span>{modalData.functionalities[1]} | </span>
+          <span>{modalData.functionalities[2]}</span>
+        </div>
+
+        <div className='titleDiscr'>Rental Conditions: </div>
+        <div className='rental_Conditional'>
+        <span className='rentalConditional'>Minimum age : <span className='modelStyle'>25</span></span>
+        <span className='rentalConditional'>Valid driver’s license</span>
+        </div>
+
+        <div className='rental_Conditional'>
+          <span className='rentalConditional'>Security deposite required </span>
+        <span className='rentalConditional'>Mileage: <span className='modelStyle'>{modalData.mileage.toLocaleString('en-CA')}</span></span>
+          <span className='rentalConditional'>Price: <span className='modelStyle'>{modalData.rentalPrice}</span></span>
+          </div>
+<br className='a'/>      
+          {/* <button className='btnLeanMore' href="tel:+380730000000">
             Rental car
-        </button> */}
-        {/* onClick={handleIncrementProduct} */}
-       
+        </button>  */}
+        {/* <div>
+          <a className='btnRental' href="tel:+380730000000">Rental car</a>
+        </div> */}
+        <a className='btn_Rental' href="tel:+380730000000">Rental car</a>     
+        
       </div>
     </StyledModal>
   );
 };
 
 export default Modal;
+
+
+{/* <img className='img' src= {img} alt={make}  />
+      <div className='itemStylePrice'>
+        <div className='itemStyleYear'>
+      <p >{make}</p>
+      <span >{model},</span>
+          <p>{year}</p>
+          </div>
+        <p >{rentalPrice}</p>
+      </div>
+      <div className='itemStyleDiscr'>
+      <p >{address}</p>
+      <p >{rentalCompany}</p>
+        <p >{accessories[0]}</p>
+      </div>
+      <div className='itemStyleDiscr' >
+      <p >{type}</p>
+      <p >{mileage}</p>
+        <p >{functionalities[0]}</p>
+      </div> */}

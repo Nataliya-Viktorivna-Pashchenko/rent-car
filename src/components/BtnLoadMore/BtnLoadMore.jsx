@@ -1,11 +1,12 @@
 // import css from "./Button.module.css";
+import { LoadMoreStyle } from "./BtnLoadMore.styled";
 
-export const Button = ({ clickLoadMore }) => {
+export const Button = ({ clickFn, title }) => {
   return (
-    <div >
-    <button  type="button" onClick={clickLoadMore}>
-      Load more...
+    <LoadMoreStyle >
+    <button className="buttonStyle" type="button" onClick={clickFn}>
+      {title}
       </button>
-      </div>
+      </LoadMoreStyle>
   );
 };
