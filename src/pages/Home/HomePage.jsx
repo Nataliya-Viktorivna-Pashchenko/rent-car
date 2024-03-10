@@ -1,14 +1,8 @@
 import React, { useState } from 'react';
-// import { AdvertList } from '../../components/AdvertList/AdvertList';
-// import Modal from '../../components/Modal/Modal';
+
 import { StyleHomePage } from './HomePage.styled';
-// import css from 'components/Styles.module.css';
-
-
 
 const HomePage =() => {
-
-
 
     return(
         <StyleHomePage  >
@@ -19,9 +13,6 @@ const HomePage =() => {
                 <p className='textHP'>Oгромный выбор автомобилей, начиная от эконом класса, вроде Chevrolet Spark, заканчивая премиальными моделями седанов по типу Mercedes S класса и внедорожников — Audi Q7 и Toyota Land Cruiser 200, которыми вы можете управлять сами без водителя</p> 
                 <p className='textHP'>Когда вы берете машину на прокат на нашем сайте, то выбираете именно конкретную модель, а не класс автомобиля.</p>
 
-            
-           
- 
         </StyleHomePage> 
     )
     

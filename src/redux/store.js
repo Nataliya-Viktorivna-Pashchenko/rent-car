@@ -36,15 +36,3 @@ export const store = configureStore({
 
 export const persistor = persistStore(store);
 
-
-// import { configureStore } from '@reduxjs/toolkit';
-// import { advertsReducer } from './advert/advert.reducer';
-
-
-
-// export const store = configureStore({
-//   reducer: {
-//     advertsStore: advertsReducer,
-//   },
- 
-// });

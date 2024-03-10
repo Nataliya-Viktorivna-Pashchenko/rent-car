@@ -1,7 +1,7 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect, useState } from "react";
 import { fetchAdvertsThunk, addAdvertToFavorite, deleteAdvertFavorite } from '../../redux/advert/advert.reducer';
-// import {Loader} from "components/Loader/Loader";
+import {Loader} from "components/Loader/Loader";
 import { AdvertItem } from '../AdvertItem/AdvertItem';
 import { selectAdverts, selectAdvertsFavorites, selectAllAdverts, selectFilter, selectFilterAdverts } from '../../redux/advert/advert.selectors';
 import Modal from '../Modal/Modal';
@@ -15,6 +15,9 @@ const [isOpenModal, setIsOpenModal] = useState(false);
 const [modalData, setModalData] = useState(null);
 const [page, setPage] = useState(1);
 
+  const isLoading = useSelector(state => state.isLoading);
+  const error = useSelector(state => state.error);
+  
 const dispatch = useDispatch();
   const advertsList = useSelector(selectAdverts);
     
@@ -49,8 +52,8 @@ const openModal = someDataToModal => {
     <StyleAdvertList>
       <MakesSearch/>
         <ul className='list'>
-          {/* {error !== null && <p className="error-bage">{error}</p>}
-      {isLoading && <Loader />} */}
+          {error !== null && <p className="error-bage">{error}</p>}
+      {isLoading && <Loader />}
           
           {advertsList.map(({ id, make, model, year, description, rentalPrice, address, rentalCompany, engineSize,
             fuelConsumption, mileage, img, accessories, type, functionalities }) => (

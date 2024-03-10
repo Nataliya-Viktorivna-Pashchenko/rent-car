@@ -1,4 +1,3 @@
-// import css from "./Button.module.css";
 import { LoadMoreStyle } from "./BtnLoadMore.styled";
 
 export const Button = ({ clickFn, title }) => {

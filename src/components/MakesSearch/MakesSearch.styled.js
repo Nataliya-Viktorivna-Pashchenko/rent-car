@@ -15,46 +15,10 @@ line-height: 129%;
 color: #8a8a89;
 }
 
- /* & .react-select {
-    margin-left: auto;
-    width: 200px;
-    background-color: transparent;
-    color: #fff;
-    &__control {
-      cursor: pointer;
-      background-color: transparent;
-      width: 200px;
-      border: none;
-      color: white !important;
-    }
-    &--menu-is-open {
-      background-color: transparent;
-    }
-    &__indicator-separator {
-      display: none;
-    }
-    &__menu {
-      background-color: rgba(22, 31, 55, 1);
-      border-radius: 20px;
-    }
-    &__option {
-      cursor: pointer;
-      &--is-focused {
-        color: white;
-        background-color: transparent;
-      }
-    }
-    &__single-value {
-      color: white;
-    } */
-  /* } */
-
 .selectStyle{
     border-radius: 14px;
-padding: 14px 89px 14px 18px;
 width: 224px;
 height: 48px;
-background: #f7f7fb;
 }
 .btnSearch{
   border-radius: 12px;

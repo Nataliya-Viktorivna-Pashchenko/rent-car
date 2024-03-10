@@ -1,22 +1,21 @@
 import { useSelector, useDispatch } from 'react-redux';
-import { useEffect, useState } from "react";
-import { fetchAdvertsThunk, addAdvertToFavorite, deleteAdvertFavorite } from '../../redux/advert/advert.reducer';
-// import {Loader} from "components/Loader/Loader";
+import { useState } from "react";
+import {  deleteAdvertFavorite } from '../../redux/advert/advert.reducer';
+import {Loader} from "components/Loader/Loader";
 import { AdvertItem } from '../AdvertItem/AdvertItem';
-import { selectAdverts, selectAdvertsFavorites } from '../../redux/advert/advert.selectors';
+import {  selectAdvertsFavorites } from '../../redux/advert/advert.selectors';
 import Modal from '../Modal/Modal';
 import { StyleAdvertList } from './AdvertList.styled';
-import { Button } from '../BtnLoadMore/BtnLoadMore';
 
 export const FavoritesList = () => {
   
 const [isOpenModal, setIsOpenModal] = useState(false);
 const [modalData, setModalData] = useState(null);
-// const [page, setPage] = useState(1);
 
 const dispatch = useDispatch();
-//   const fa = useSelector(selectAdverts);
-  const favorites = useSelector(selectAdvertsFavorites)
+const favorites = useSelector(selectAdvertsFavorites)
+const isLoading = useSelector(state => state.isLoading);
+const error = useSelector(state => state.error); 
   
 const openModal = someDataToModal => {
     setIsOpenModal(true);
@@ -40,8 +39,8 @@ const openModal = someDataToModal => {
     <StyleAdvertList>
       
         <ul className='list'>
-          {/* {error !== null && <p className="error-bage">{error}</p>}
-      {isLoading && <Loader />} */}
+          {error !== null && <p className="error-bage">{error}</p>}
+      {isLoading && <Loader />}
           {favorites.map(({ id, make, model, year, description, rentalPrice, address, rentalCompany, engineSize,
             fuelConsumption, mileage, img, accessories, type, functionalities }) => (
             
@@ -62,17 +61,13 @@ const openModal = someDataToModal => {
              description={description}
              fuelConsumption={fuelConsumption}
              engineSize={engineSize}
-            //  toggleFavorite={toggleFavorite}
               openModal={openModal}
-            //   addToFavorites={addToFavorites}
               deleteAdvertFavorite={deleteFavorites}
             />
             
             ))}
         </ul>
-
-{/* <Button title='Load more...' clickFn={clickLoadMore} /> */}
-        
+       
         {isOpenModal && <Modal closeModal={closeModal} modalData={modalData} />}
     </StyleAdvertList>
   );

@@ -7,7 +7,7 @@ width: 100%;
     background-color: #2e2f42;
     background-image: linear-gradient(rgba(46, 47, 66, 0.4),
     rgba(46, 47, 66, 0.4)),
-    url('/src/Img/car.jpg');
+    url('../../Img/car.jpg');
     background-repeat: no-repeat;
     background-size: cover ;
     background-position: center;
@@ -16,8 +16,6 @@ width: 100%;
 .titleHP {
     display: flex;
     justify-content: center;
-    /* margin-left: auto;
-    margin-right: auto; */
     font-size: 70px;
     color: rgb(245, 245, 220);
     text-shadow: 4px 4px 6px #00006a;

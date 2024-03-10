@@ -1,14 +1,13 @@
 import { useDispatch } from 'react-redux';
 import Select from 'react-select';
-import { selectFilter } from '../../redux/advert/advert.selectors';
 import { changeFilter, fetchAllAdvertsThunk } from '../../redux/advert/advert.reducer';
 import { useState } from 'react';
+import { StyleSearch } from './MakesSearch.styled';
 
 
 export const MakesSearch = () => {
 
     const [makeSearch, setMakeSearch] = useState('');
-// console.log(makeSearch)
      const makes = [
         'Volvo', 'HUMMER', 'Subaru', 'Mitsubishi', 'Nissan', 'Navigator L',
         'GMC', 'Hyundai', 'Betley', 'Mercedes-Benz', 'Aston Martin', 'Pontiac', 'Lamborghini', 'Audi',
@@ -37,13 +36,14 @@ export const MakesSearch = () => {
     }
 
     return (
-        <form onSubmit={onSubmit}>
+        <StyleSearch onSubmit={onSubmit}>
             <Select
+                className='selectStyle'
                 name='make'
                 options={getMakesOptions()}
                 onChange={onChange}
             />
-            <button>Search</button>
-        </form>
+            <button className='btnSearch'>Search</button>
+        </StyleSearch>
     )
 }

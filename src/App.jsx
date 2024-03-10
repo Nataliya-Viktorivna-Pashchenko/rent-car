@@ -1,10 +1,12 @@
 import { NavLink, Route, Routes } from "react-router-dom"
 import './index.css'
-import HomePage from "./pages/Home/HomePage"
-import CatalogPage from "./pages/Catalog/CatalogPage"
-import FavoritesPage from "./pages/Favorites/FavoritesPage"
 import Layout from "./components/Layout/Layout"
-import { Suspense } from "react"
+import { Suspense, lazy} from "react"
+
+const HomePage = lazy(() => import('./pages/Home/HomePage'));
+const CatalogPage = lazy(() => import('./pages/Catalog/CatalogPage'));
+// import FavoritesPage from "./pages/Favorites/FavoritesPage"
+const FavoritesPage = lazy(() => import('./pages/Favorites/FavoritesPage'));
 
 
 function App() {

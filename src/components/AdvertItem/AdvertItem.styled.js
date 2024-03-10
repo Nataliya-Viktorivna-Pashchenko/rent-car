@@ -16,23 +16,23 @@ display: flex;
 .itemStylePrice{
   display: flex;
   justify-content: space-between;
-         align-items: center;
-      font-family: var(--font-family);
-font-weight: 500;
-font-size: 16px;
-line-height: 150%;
-color: #121417;
-margin-bottom: 14px;
+  align-items: center;
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  color: #121417;
+  margin-bottom: 14px;
 }
     .itemStyleYear{
       display: flex;
       align-items: center;
       gap: 5px;
       font-family: var(--font-family);
-font-weight: 500;
-font-size: 16px;
-line-height: 150%;
-color: #121417;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    color: #121417;
     }
 
     .blueStyle{
@@ -49,10 +49,7 @@ color: rgba(18, 20, 23, 0.5);
 margin-bottom: 4px;
     };
 
-    /* .itemNone{
-      display: none;
-    } */
-
+   
     .btnLeanMore {
       border-radius: 12px;
 padding: 12px 99px;
@@ -85,8 +82,4 @@ cursor: pointer;
 .heart:hover{
   border-radius: none;
 }
-/* .heartBlue{
-  background-color: #3470ff;
-} */
-
 `;

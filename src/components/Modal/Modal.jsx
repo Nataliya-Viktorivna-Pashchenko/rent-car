@@ -1,12 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect} from 'react';
 import { StyledModal } from './Modal.styled';
 import { GrClose } from "react-icons/gr";
 
-// import { StyledModal } from './Styled';
 
 
 const Modal = ({ modalData, closeModal }) => {
-//   const [counter, setCounter] = useState(1);
 
   useEffect(() => {
     const handleKeyDown = event => {
@@ -24,34 +22,13 @@ const Modal = ({ modalData, closeModal }) => {
     };
   }, [closeModal]);
 
-//   useEffect(() => {
-//     console.log('Product counter value: ' + counter);
-//   }, [counter]);
-
-//   const handleIncrementProduct = () => {
-//     setCounter(prevState => prevState + 1);
-//     // setCounter(counter + 1);
-//   };
-
   const handleOverayClick = event => {
     if (event.target === event.currentTarget) {
       closeModal();
     }
   };
 
-  // const CallButton = ()  => {
-  // const phoneNumber = '+380730000000';
-
-  // const handleCall = () => {
-  //   window.location.href = "tel:'+380730000000'";
-  // };
-
-//   return (
-//     <button onClick={handleCall}>Позвонить</button>
-//   );
-// }
-
-
+  
   return (
     <StyledModal onClick={handleOverayClick}>
       <div className="modal">
@@ -109,13 +86,8 @@ const Modal = ({ modalData, closeModal }) => {
         <span className='rentalConditional'>Mileage: <span className='modelStyle'>{modalData.mileage.toLocaleString('en-CA')}</span></span>
           <span className='rentalConditional'>Price: <span className='modelStyle'>{modalData.rentalPrice}</span></span>
           </div>
-<br className='a'/>      
-          {/* <button className='btnLeanMore' href="tel:+380730000000">
-            Rental car
-        </button>  */}
-        {/* <div>
-          <a className='btnRental' href="tel:+380730000000">Rental car</a>
-        </div> */}
+          <br className='a'/>      
+        
         <a className='btn_Rental' href="tel:+380730000000">Rental car</a>     
         
       </div>
@@ -126,22 +98,3 @@ const Modal = ({ modalData, closeModal }) => {
 export default Modal;
 
 
-{/* <img className='img' src= {img} alt={make}  />
-      <div className='itemStylePrice'>
-        <div className='itemStyleYear'>
-      <p >{make}</p>
-      <span >{model},</span>
-          <p>{year}</p>
-          </div>
-        <p >{rentalPrice}</p>
-      </div>
-      <div className='itemStyleDiscr'>
-      <p >{address}</p>
-      <p >{rentalCompany}</p>
-        <p >{accessories[0]}</p>
-      </div>
-      <div className='itemStyleDiscr' >
-      <p >{type}</p>
-      <p >{mileage}</p>
-        <p >{functionalities[0]}</p>
-      </div> */}
