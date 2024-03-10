@@ -15,5 +15,5 @@ export default defineConfig({
       // customHooks: '/src/customHooks',
     },
   },
-  // base: '/rent-car/',
+  base: '/rent-car/',
 })
